@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "file uploads",
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "author": "Joseph",
   "license": "MIT",
   "dependencies": {
