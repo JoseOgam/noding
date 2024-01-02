@@ -1,7 +1,9 @@
 const User = require("../model/user");
 const multer = require("multer");
 
+//set up multer storage for storing uploaded images
 const storage = multer.diskStorage({
+  // Specify the destination folder for uploaded images
   destination: (req, file, cb) => {
     cb(null, "uploads/");
   },
@@ -19,7 +21,7 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage: storage }); //multer instance with storage config
 
 const addUserController = async (req, res) => {
   try {
