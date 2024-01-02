@@ -1,8 +1,8 @@
 const express = require("express");
-const { addUserController } = require("../controller/controller");
+const { addUserController, upload } = require("../controller/controller");
 
 const router = express.Router();
 
-router.post("/addUser", addUserController);
+router.post("/addUser", upload.single("image"), addUserController);
 
 module.exports = router;
