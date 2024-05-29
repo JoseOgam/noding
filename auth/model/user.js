@@ -24,16 +24,5 @@ const RegisterSchema = new Schema({
   },
 });
 
-RegisterSchema.pre("save", async (next) => {
-  const user = user;
-
-  if (!user.isModified("password")) return next();
-  try {
-    const salt = await bcrypt.genSalt(10); //generate salt with complexity of 10 chae
-  } catch (error) {
-    return next(error);
-  }
-});
-
 const RegisterUser = mongoose.model("RegisterUser", RegisterSchema);
 module.exports = RegisterUser;
